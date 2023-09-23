@@ -1,0 +1,75 @@
+@import "variables";
+@import "responsive";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+// styles related to App.tsx
+
+.main {
+  font-family: 'Inter', sans-serif;
+  color: $main-color;
+}
+
+.container {
+  display: flex;
+
+  @include xxl {}
+}
+
+.menuContainer {
+  width: 250px;
+  padding: 5px 20px;
+  border-right: 2px solid $soft-bg;
+
+  @include lg {
+    width: max-content;
+  }
+}
+
+.contentContainer {
+  padding: 5px 20px;
+  width: 100%;
+}
+
+// THEME
+
+.bgWhite {
+  background-color: $white;
+}
+
+.bgDark {
+  background-color: $bg-dark;
+}
+
+.bgLessDark {
+  background-color: $bg-less-dark;
+}
+
+.bgPrimary {
+  background-color: $bg-primary;
+}
+
+.bgLight {
+  background-color: $bg-light;
+}
+
+.bgRed {
+  background-color: $red;
+}
+
+.colorWhite {
+  color: $white;
+}
+
+.colorPrimary {
+  color: $primary;
+}
