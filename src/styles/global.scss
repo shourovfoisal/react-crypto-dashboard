@@ -17,28 +17,17 @@ a {
 .main {
   font-family: 'Inter', sans-serif;
   color: $main-color;
+  display: flex;
 }
 
 .container {
-  display: flex;
-
-  @include xxl {}
-}
-
-.menuContainer {
-  width: 250px;
-  padding: 5px 20px;
-  border-right: 2px solid $soft-bg;
-
-  @include lg {
-    width: max-content;
-  }
+  flex: 1;
 }
 
 .contentContainer {
-  padding: 5px 20px;
-  width: 100%;
+  margin: 1.5rem;
 }
+
 
 // THEME
 
@@ -72,4 +61,12 @@ a {
 
 .colorPrimary {
   color: $primary;
+}
+
+.borderRightGray {
+  border-right: 2px solid $gray;
+}
+
+.borderRightDarkGray {
+  border-right: 2px solid $dark-gray;
 }

@@ -41,8 +41,8 @@ export const bgResolver = (
 	return theme === "light" ? lightClass : darkClass;
 };
 
-type lightColorClasses = "colorPrimary";
-type darkColorClasses = "colorWhite";
+type lightColorClasses = "colorPrimary" | "borderRightGray";
+type darkColorClasses = "colorWhite" | "borderRightDarkGray";
 
 export const colorResolver = (
 	lightClass: lightColorClasses,

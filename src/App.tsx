@@ -2,16 +2,25 @@ import { Home, Products, Users } from "@/pages";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { Menu, Navbar } from "@/components";
 import "@/styles/global.scss";
-import { ThemeProvider, bgResolver } from "@/contexts/themeContext";
+import {
+	ThemeProvider,
+	bgResolver,
+	colorResolver,
+} from "@/contexts/themeContext";
 
 function App() {
 	const Layout = () => (
 		<div className={`main ${bgResolver("bgLight", "bgDark")}`}>
-			<Navbar />
+			<div
+				className={`menuContainer ${colorResolver(
+					"borderRightGray",
+					"borderRightDarkGray"
+				)}`}
+			>
+				<Menu />
+			</div>
 			<div className="container">
-				<div className="menuContainer">
-					<Menu />
-				</div>
+				<Navbar />
 				<div className="contentContainer">
 					<Outlet />
 				</div>
