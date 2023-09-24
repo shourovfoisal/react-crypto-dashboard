@@ -2,12 +2,33 @@
 @import "../../styles/responsive";
 
 .menu {
+  padding: 2rem;
+
+  &>*:not(:first-child) {
+    margin-top: 2rem;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    img {
+      height: 2rem;
+      width: auto;
+    }
+
+    h2 {
+      font-weight: 600;
+      color: $primary;
+    }
+  }
 
   .item {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
 
     .title {
       font-size: 12px;
