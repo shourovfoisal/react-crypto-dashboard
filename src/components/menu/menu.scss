@@ -28,31 +28,20 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    // margin-bottom: 20px;
 
-    .title {
-      font-size: 12px;
-      font-weight: 200;
-      color: $soft-color;
-      text-transform: uppercase;
-
-      @include lg {
-        display: none;
-      }
-    }
-
-    .listItem {
+    .menuItem {
       display: flex;
       align-items: center;
       gap: 10px;
-      padding: 10px;
+      padding: $sz-sm;
+      padding-left: $sz-xxl;
       border-radius: 5px;
 
-      &:hover {
-        background-color: $soft-bg;
-      }
+      // &:hover {
+      //   background-color: $soft-bg;
+      // }
 
-      .listItemTitle {
+      .menuItemTitle {
         @include lg {
           display: none;
         }

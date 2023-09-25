@@ -18,6 +18,7 @@ a {
   font-family: 'Inter', sans-serif;
   color: $main-color;
   display: flex;
+  min-height: 100vh;
 }
 
 .container {
@@ -47,6 +48,18 @@ a {
   background-color: $bg-primary;
 }
 
+.bgHoverPrimary:hover {
+  background-color: $bg-primary;
+}
+
+.bgPrimaryDarker {
+  background-color: $bg-primary-darker;
+}
+
+.bgHoverPrimaryDarker:hover {
+  background-color: $bg-primary-darker;
+}
+
 .bgLight {
   background-color: $bg-light;
 }
@@ -64,6 +77,10 @@ a {
 }
 
 .colorPrimary {
+  color: $primary;
+}
+
+.colorHoverPrimary:hover {
   color: $primary;
 }
 

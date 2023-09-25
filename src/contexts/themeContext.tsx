@@ -30,24 +30,24 @@ export const ThemeProvider = ({ children }: Props) => {
 };
 
 // Detects theme and sends the right class for the component
-type lightBgClasses = "bgWhite" | "bgLight";
-type darkBgClasses = "bgLessDark" | "bgDark";
+type lightThemeBackgrounds = "bgWhite" | "bgLight" | "bgHoverPrimary";
+type darkThemeBackgrounds = "bgLessDark" | "bgDark" | "bgHoverPrimaryDarker";
 
 export const bgResolver = (
-	lightClass: lightBgClasses,
-	darkClass: darkBgClasses
-): lightBgClasses | darkBgClasses => {
+	lightClass: lightThemeBackgrounds,
+	darkClass: darkThemeBackgrounds
+): lightThemeBackgrounds | darkThemeBackgrounds => {
 	const { theme } = useContext(ThemeContext);
 	return theme === "light" ? lightClass : darkClass;
 };
 
-type lightColorClasses = "colorPrimary" | "borderRightGray" | "colorBlack";
-type darkColorClasses = "colorWhite" | "borderRightDarkGray";
+type lightThemeColors = "colorPrimary" | "borderRightGray" | "colorBlack";
+type darkThemeColors = "colorWhite" | "borderRightDarkGray";
 
 export const colorResolver = (
-	lightClass: lightColorClasses,
-	darkClass: darkColorClasses
-): lightColorClasses | darkColorClasses => {
+	lightClass: lightThemeColors,
+	darkClass: darkThemeColors
+): lightThemeColors | darkThemeColors => {
 	const { theme } = useContext(ThemeContext);
 	return theme === "light" ? lightClass : darkClass;
 };

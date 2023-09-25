@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import "./menu.scss";
-import { menu } from "@/data";
-import { colorResolver } from "@/contexts/themeContext";
+import { menu } from "@/static-data";
+import { bgResolver, colorResolver } from "@/contexts/themeContext";
+import { Icons } from "@/components";
 
 export const Menu = () => {
 	return (
@@ -17,11 +18,20 @@ export const Menu = () => {
 			</div>
 			{menu.map(item => (
 				<div className="item" key={item.id}>
-					<span className="title">{item.title}</span>
-					{item.listItems.map(listItem => (
-						<Link to={listItem.url} className="listItem" key={listItem.id}>
-							<img src={listItem.icon} alt={listItem.title} />
-							<span className="listItemTitle">{listItem.title}</span>
+					{item.menuItems.map(menuItem => (
+						<Link
+							to={menuItem.url}
+							className={`menuItem ${colorResolver(
+								"colorBlack",
+								"colorWhite"
+							)} colorHoverPrimary ${bgResolver(
+								"bgHoverPrimary",
+								"bgHoverPrimaryDarker"
+							)}`}
+							key={menuItem.id}
+						>
+							<Icons name={menuItem.icon} />
+							<span className="menuItemTitle">{menuItem.title}</span>
 						</Link>
 					))}
 				</div>
