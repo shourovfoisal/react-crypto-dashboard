@@ -10,9 +10,10 @@
     width: 100%;
   }
 
-  .icons {
+  .userPanel {
     display: flex;
     align-items: center;
+    justify-content: end;
     gap: 20px;
 
     .notification {

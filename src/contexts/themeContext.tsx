@@ -19,7 +19,10 @@ export const ThemeProvider = ({ children }: Props) => {
 	const [theme, setTheme] = useState<Theme>("dark");
 
 	const toggleTheme = () => {
-		setTheme(prev => (prev === "light" ? "dark" : "light"));
+		setTheme(prev => {
+			console.log(prev);
+			return prev === "light" ? "dark" : "light";
+		});
 	};
 
 	return (

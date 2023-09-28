@@ -6,10 +6,14 @@ import {
 	bgResolver,
 	colorResolver,
 } from "@/contexts/themeContext";
-import { AppInput } from "@/components/common";
+import { AppInput, ToggleButton } from "@/components/common";
 
 export const Navbar = () => {
 	const { toggleTheme } = useContext(ThemeContext);
+
+	const changeTheme = () => {
+		toggleTheme();
+	};
 
 	return (
 		<div className="navbar">
@@ -24,7 +28,8 @@ export const Navbar = () => {
 					wrapperClassName={colorResolver("colorGray", "colorDarkGray")}
 				/>
 			</div>
-			<div className="icons">
+			<div className="userPanel">
+				<ToggleButton onClick={changeTheme} />
 				<div
 					className={`notification ${colorResolver(
 						"colorPrimary",
