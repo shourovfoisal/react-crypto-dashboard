@@ -1,17 +1,13 @@
 @import "../../styles/responsive";
 
 .navbar {
-  width: 100%;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  // width: 100%;
+  padding: 1.5rem 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 
-  .logo {
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-    gap: 10px;
+  .search {
+    width: 100%;
   }
 
   .icons {

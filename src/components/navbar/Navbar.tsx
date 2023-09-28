@@ -6,15 +6,23 @@ import {
 	bgResolver,
 	colorResolver,
 } from "@/contexts/themeContext";
+import { AppInput } from "@/components/common";
 
 export const Navbar = () => {
 	const { toggleTheme } = useContext(ThemeContext);
 
 	return (
 		<div className="navbar">
-			<div className="logo">
-				<img src="logo.svg" alt="Logo" />
-				<span>lamadmin</span>
+			<div className="search">
+				<AppInput
+					type="text"
+					placeholder="Search."
+					className={colorResolver(
+						"colorPlaceholderGray",
+						"colorPlaceholderDarkGray"
+					)}
+					wrapperClassName={colorResolver("colorGray", "colorDarkGray")}
+				/>
 			</div>
 			<div className="icons">
 				<div

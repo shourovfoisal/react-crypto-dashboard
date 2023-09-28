@@ -1,0 +1,33 @@
+@import "../../../styles/variables";
+
+.appInput {
+  padding: 1.25rem 2.5rem;
+  background: $white;
+  border-radius: $border-radius-tablet;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  height: 100%;
+
+  &>input {
+    height: 100%;
+    font-size: 1rem;
+  }
+
+  &>input::placeholder {
+    font-size: 1rem;
+    padding-left: 0.1rem;
+  }
+
+  input {
+    width: 100%;
+    outline: none;
+    border: none;
+    flex: 1;
+  }
+
+  span {
+    display: block;
+    cursor: pointer;
+  }
+}

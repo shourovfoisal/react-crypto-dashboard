@@ -1,6 +1,14 @@
 @import "variables";
 @import "responsive";
 
+html * {
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  color: $main-color
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -15,8 +23,6 @@ a {
 // styles related to App.tsx
 
 .main {
-  font-family: 'Inter', sans-serif;
-  color: $main-color;
   display: flex;
   min-height: 100vh;
 }
@@ -78,6 +84,22 @@ a {
 
 .colorPrimary {
   color: $primary;
+}
+
+.colorGray {
+  color: $gray;
+}
+
+.colorDarkGray {
+  color: $dark-gray;
+}
+
+.colorPlaceholderGray::placeholder {
+  color: $gray;
+}
+
+.colorPlaceholderDarkGray::placeholder {
+  color: $dark-gray;
 }
 
 .colorHoverPrimary:hover {
