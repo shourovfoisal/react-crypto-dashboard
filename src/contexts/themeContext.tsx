@@ -20,7 +20,6 @@ export const ThemeProvider = ({ children }: Props) => {
 
 	const toggleTheme = () => {
 		setTheme(prev => {
-			console.log(prev);
 			return prev === "light" ? "dark" : "light";
 		});
 	};

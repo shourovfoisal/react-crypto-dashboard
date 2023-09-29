@@ -29,7 +29,7 @@ export const Navbar = () => {
 				/>
 			</div>
 			<div className="userPanel">
-				<ToggleButton onClick={changeTheme} />
+				<ToggleButton onChange={changeTheme} />
 				<div
 					className={`notification ${colorResolver(
 						"colorPrimary",

@@ -2,10 +2,10 @@ import "./toggleButton.scss";
 
 type Props = React.HTMLAttributes<HTMLInputElement>;
 
-export const ToggleButton = ({ onClick }: Props) => {
+export const ToggleButton = ({ onChange }: Props) => {
 	return (
-		<div className="buttonBox" onClick={onClick}>
-			<input id="darkModeButton" type="checkbox" />
+		<div className="buttonBox">
+			<input id="darkModeButton" type="checkbox" onChange={onChange} />
 			<label htmlFor="darkModeButton"></label>
 		</div>
 	);
