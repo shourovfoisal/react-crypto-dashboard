@@ -1,3 +1,4 @@
+import { bgResolver, colorResolver } from "@/contexts/themeContext";
 import "./appInput.scss";
 import { useRef } from "react";
 import type { HTMLAttributes } from "react";
@@ -22,13 +23,25 @@ const BaseInput = ({
 
 	return (
 		<div
-			className={`appInput ${wrapperClassName}`}
+			className={`appInput ${wrapperClassName} ${colorResolver(
+				"colorGray",
+				"colorLightGray"
+			)} ${colorResolver("borderGray", "borderLightGray")} ${bgResolver(
+				"bgWhite",
+				"bgLessDark"
+			)}`}
 			onClick={() => inputRef.current?.focus()}
 		>
 			<input
 				ref={inputRef}
 				type={permittedInputTypes.includes(type) ? type : "text"}
-				className={className}
+				className={`${className} ${colorResolver(
+					"colorDarkGray",
+					"colorGray"
+				)} ${colorResolver(
+					"colorPlaceholderGray",
+					"colorPlaceholderLightGray"
+				)}`}
 				{...props}
 			/>
 			<span>

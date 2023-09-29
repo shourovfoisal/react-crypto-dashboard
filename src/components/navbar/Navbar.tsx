@@ -27,21 +27,7 @@ export const Navbar = ({ className }: Props) => {
 	return (
 		<div className={`navbar ${className}`}>
 			<div className="search">
-				<AppInput
-					type="text"
-					placeholder="Search"
-					className={colorResolver(
-						"colorPlaceholderGray",
-						"colorPlaceholderLightGray"
-					)}
-					wrapperClassName={`${colorResolver(
-						"colorGray",
-						"colorLightGray"
-					)} ${colorResolver("borderGray", "borderLightGray")} ${bgResolver(
-						"bgWhite",
-						"bgLessDark"
-					)}`}
-				/>
+				<AppInput type="text" placeholder="Search" />
 			</div>
 			<div className="userPanel">
 				<ToggleButton onChange={changeTheme} />
