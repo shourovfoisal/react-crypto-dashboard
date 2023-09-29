@@ -1,32 +1,35 @@
 @import "../../../styles/variables";
 
 .appInput {
-  padding: 1.25rem 2.5rem;
+  padding: 1rem 2.5rem;
   background: $white;
   border-radius: $border-radius-tablet;
   display: flex;
   align-items: center;
   font-size: 1.2rem;
   width: 100%;
+  // border: 1px solid $gray;
 
-  &>input {
-    font-size: 1rem;
-  }
-
-  &>input::placeholder {
-    font-size: 1rem;
-    padding-left: 0.1rem;
+  * {
+    display: block;
   }
 
   input {
+    font-size: 1rem;
+    background-color: transparent;
+    padding-right: 1rem;
     width: 100%;
     outline: none;
     border: none;
     flex: 1;
   }
 
+  input::placeholder {
+    font-size: 1rem;
+    padding-left: 0.1rem;
+  }
+
   span {
-    display: block;
     cursor: pointer;
   }
 }

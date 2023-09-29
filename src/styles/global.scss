@@ -102,16 +102,32 @@ a {
   color: $dark-gray;
 }
 
+.colorLightGray {
+  color: $light-gray;
+}
+
 .colorPlaceholderGray::placeholder {
   color: $gray;
 }
 
-.colorPlaceholderDarkGray::placeholder {
-  color: $dark-gray;
+.colorPlaceholderLightGray::placeholder {
+  color: $light-gray;
 }
 
 .colorHoverPrimary:hover {
   color: $primary;
+}
+
+.borderGray {
+  border: 1px solid $gray;
+}
+
+.borderDarkGray {
+  border: 1px solid $dark-gray;
+}
+
+.borderLightGray {
+  border: 1px solid $light-gray;
 }
 
 .borderRightGray {

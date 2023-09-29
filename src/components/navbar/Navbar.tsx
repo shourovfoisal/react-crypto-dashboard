@@ -20,6 +20,10 @@ export const Navbar = ({ className }: Props) => {
 		toggleTheme();
 	};
 
+	const handleExpand = () => {
+		console.log("Open Panel.");
+	};
+
 	return (
 		<div className={`navbar ${className}`}>
 			<div className="search">
@@ -28,9 +32,15 @@ export const Navbar = ({ className }: Props) => {
 					placeholder="Search"
 					className={colorResolver(
 						"colorPlaceholderGray",
-						"colorPlaceholderDarkGray"
+						"colorPlaceholderLightGray"
 					)}
-					wrapperClassName={colorResolver("colorGray", "colorDarkGray")}
+					wrapperClassName={`${colorResolver(
+						"colorGray",
+						"colorLightGray"
+					)} ${colorResolver("borderGray", "borderLightGray")} ${bgResolver(
+						"bgWhite",
+						"bgLessDark"
+					)}`}
 				/>
 			</div>
 			<div className="userPanel">
@@ -59,7 +69,7 @@ export const Navbar = ({ className }: Props) => {
 						<div>Shourov Foisal</div>
 						<div>hello@devshourov.com</div>
 					</div>
-					<div className="icon">
+					<div className="icon" onClick={handleExpand}>
 						<PiDotsNineThin />
 					</div>
 				</div>
