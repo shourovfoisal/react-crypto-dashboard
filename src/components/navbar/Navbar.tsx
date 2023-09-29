@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import "./navbar.scss";
 import { HiOutlineBell } from "react-icons/hi2";
+import { PiDotsNineThin } from "react-icons/pi";
 import {
 	ThemeContext,
 	bgResolver,
@@ -20,7 +21,7 @@ export const Navbar = () => {
 			<div className="search">
 				<AppInput
 					type="text"
-					placeholder="Search."
+					placeholder="Search"
 					className={colorResolver(
 						"colorPlaceholderGray",
 						"colorPlaceholderDarkGray"
@@ -41,14 +42,23 @@ export const Navbar = () => {
 						<span className="bgRed"></span>
 					</div>
 				</div>
-				{/* <div className="user">
-					<img
-						src="https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg?auto=compress&cs=tinysrgb&fm=jpg&w=640&h=959&lazy=load"
-						alt=""
-					/>
-					<span>Shourov</span>
+				<div
+					className={`user ${bgResolver("bgLight", "bgDark")} ${colorResolver(
+						"colorDarkGray",
+						"colorGray"
+					)}`}
+				>
+					<div className="image">
+						<img src="/user.png" alt="user avatar" />
+					</div>
+					<div className="nameEmail">
+						<div>Shourov Foisal</div>
+						<div>hello@devshourov.com</div>
+					</div>
+					<div className="icon">
+						<PiDotsNineThin />
+					</div>
 				</div>
-				<img src="settings.svg" alt="" className="icon" /> */}
 			</div>
 		</div>
 	);

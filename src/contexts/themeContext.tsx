@@ -48,12 +48,14 @@ type lightThemeColors =
 	| "borderRightGray"
 	| "colorBlack"
 	| "colorGray"
-	| "colorPlaceholderGray";
+	| "colorPlaceholderGray"
+	| "colorDarkGray";
 type darkThemeColors =
 	| "colorWhite"
 	| "borderRightDarkGray"
 	| "colorDarkGray"
-	| "colorPlaceholderDarkGray";
+	| "colorPlaceholderDarkGray"
+	| "colorGray";
 
 export const colorResolver = (
 	lightClass: lightThemeColors,
