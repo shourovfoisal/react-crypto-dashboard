@@ -1,4 +1,5 @@
 @import "../../styles/responsive";
+@import "../../styles/variables";
 
 .navbar {
   // width: 100%;
@@ -50,12 +51,26 @@
       align-items: center;
       gap: 1rem;
       padding: 0.5rem 1rem;
+      border-radius: 0.8rem;
 
       .image {
 
         img {
           width: 3rem;
           height: 3rem;
+        }
+      }
+
+      .nameEmail {
+        &>div:first-child {
+          font-weight: 600;
+          font-size: 0.9rem;
+        }
+
+        &>div:last-child {
+          margin-top: 0.3rem;
+          font-size: 0.7rem;
+          color: $light-gray;
         }
       }
 

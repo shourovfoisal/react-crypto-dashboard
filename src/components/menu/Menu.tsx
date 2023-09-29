@@ -3,10 +3,15 @@ import "./menu.scss";
 import { menu } from "@/static-data";
 import { bgResolver, colorResolver } from "@/contexts/themeContext";
 import { Icons } from "@/components";
+import type { HTMLAttributes } from "react";
 
-export const Menu = () => {
+type HTMLDivElementProps = HTMLAttributes<HTMLDivElement>;
+
+type Props = HTMLDivElementProps;
+
+export const Menu = ({ className }: Props) => {
 	return (
-		<div className="menu">
+		<div className={`menu ${className}`}>
 			<div className="logo">
 				<img src="/logo.svg" alt="app logo" />
 				<h2>

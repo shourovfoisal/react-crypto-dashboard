@@ -17,10 +17,10 @@ function App() {
 					"borderRightDarkGray"
 				)}`}
 			>
-				<Menu />
+				<Menu className={bgResolver("bgWhite", "bgLessDark")} />
 			</div>
 			<div className="container">
-				<Navbar />
+				<Navbar className={bgResolver("bgWhite", "bgLessDark")} />
 				<div className="contentContainer">
 					<Outlet />
 				</div>

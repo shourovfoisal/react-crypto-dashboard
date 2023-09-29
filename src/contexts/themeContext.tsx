@@ -32,8 +32,16 @@ export const ThemeProvider = ({ children }: Props) => {
 };
 
 // Detects theme and sends the right class for the component
-type lightThemeBackgrounds = "bgWhite" | "bgLight" | "bgHoverPrimary";
-type darkThemeBackgrounds = "bgLessDark" | "bgDark" | "bgHoverPrimaryDarker";
+type lightThemeBackgrounds =
+	| "bgWhite"
+	| "bgLight"
+	| "bgHoverPrimary"
+	| "bgImmediateDescendantsWhite";
+type darkThemeBackgrounds =
+	| "bgLessDark"
+	| "bgDark"
+	| "bgHoverPrimaryDarker"
+	| "bgImmediateDescendantsLessDark";
 
 export const bgResolver = (
 	lightClass: lightThemeBackgrounds,

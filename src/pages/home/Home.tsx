@@ -8,10 +8,16 @@ import {
 	barChartBoxVisit,
 	barChartBoxRevenue,
 } from "@/data";
+import { bgResolver } from "@/contexts/themeContext";
 
 export const Home = () => {
 	return (
-		<div className="home">
+		<div
+			className={`home ${bgResolver(
+				"bgImmediateDescendantsWhite",
+				"bgImmediateDescendantsLessDark"
+			)}`}
+		>
 			<div className="box box1">{/* <TopBox /> */}1</div>
 			<div className="box box2">{/* <ChartBox {...chartBoxUser} /> */}2</div>
 			<div className="box box3">{/* <ChartBox {...chartBoxProduct} /> */}3</div>

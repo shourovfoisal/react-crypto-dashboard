@@ -74,6 +74,14 @@ a {
   background-color: $red;
 }
 
+.bgImmediateDescendantsWhite>* {
+  background-color: $white;
+}
+
+.bgImmediateDescendantsLessDark>* {
+  background-color: $bg-less-dark;
+}
+
 .colorBlack {
   color: $black;
 }
