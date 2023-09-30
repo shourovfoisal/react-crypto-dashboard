@@ -67,6 +67,14 @@ a {
   background-color: $bg-primary-darker;
 }
 
+.bgHoverWhiteDimmed:hover {
+  background-color: $white-dimmed;
+}
+
+.bgHoverLessDark:hover {
+  background-color: $bg-less-dark;
+}
+
 .bgLight {
   background-color: $bg-light;
 }

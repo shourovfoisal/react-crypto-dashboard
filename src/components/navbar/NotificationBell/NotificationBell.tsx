@@ -1,4 +1,8 @@
-import { bgResolver, colorResolver } from "@/contexts/themeContext";
+import {
+	bgHoverResolver,
+	bgResolver,
+	colorResolver,
+} from "@/contexts/themeContext";
 import "./notificationBell.scss";
 import { PopupCard } from "@/components/common";
 import { HiOutlineBell } from "react-icons/hi2";
@@ -54,7 +58,10 @@ export const NotificationBell = () => {
 					<div className="notification whitespaceNowrap">
 						{notificationData?.map(notification => (
 							<div
-								className="notificationMessage selectNone"
+								className={`notificationMessage selectNone ${bgHoverResolver(
+									"bgHoverWhiteDimmed",
+									"bgHoverLessDark"
+								)}`}
 								key={notification.whatHappened}
 								onClick={handleNotificationClick}
 							>

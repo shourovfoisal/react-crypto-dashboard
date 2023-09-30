@@ -56,8 +56,8 @@ export const bgResolver = (
  * Background Hover Resolver
  */
 
-type LightThemeBackgroundHoverColor = "bgHoverPrimary";
-type DarkThemeBackgroundHoverColor = "bgHoverPrimaryDarker";
+type LightThemeBackgroundHoverColor = "bgHoverPrimary" | "bgHoverWhiteDimmed";
+type DarkThemeBackgroundHoverColor = "bgHoverPrimaryDarker" | "bgHoverLessDark";
 
 export const bgHoverResolver = (
 	lightClass: LightThemeBackgroundHoverColor,
