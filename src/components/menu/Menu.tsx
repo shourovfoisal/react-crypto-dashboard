@@ -21,26 +21,28 @@ export const Menu = ({ className }: Props) => {
 					</span>
 				</h2>
 			</div>
-			{menu.map(item => (
-				<div className="item" key={item.id}>
-					{item.menuItems.map(menuItem => (
-						<Link
-							to={menuItem.url}
-							className={`menuItem ${colorResolver(
-								"colorBlack",
-								"colorWhite"
-							)} colorHoverPrimary ${bgResolver(
-								"bgHoverPrimary",
-								"bgHoverPrimaryDarker"
-							)}`}
-							key={menuItem.id}
-						>
-							<Icons name={menuItem.icon} />
-							<span className="menuItemTitle">{menuItem.title}</span>
-						</Link>
-					))}
-				</div>
-			))}
+			<div className="items">
+				{menu.map(item => (
+					<div className="item" key={item.id}>
+						{item.menuItems.map(menuItem => (
+							<Link
+								to={menuItem.url}
+								className={`menuItem ${colorResolver(
+									"colorBlack",
+									"colorWhite"
+								)} colorHoverPrimary ${bgResolver(
+									"bgHoverPrimary",
+									"bgHoverPrimaryDarker"
+								)}`}
+								key={menuItem.id}
+							>
+								<Icons name={menuItem.icon} />
+								<span className="menuItemTitle">{menuItem.title}</span>
+							</Link>
+						))}
+					</div>
+				))}
+			</div>
 		</div>
 	);
 };
