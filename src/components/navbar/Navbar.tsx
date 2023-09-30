@@ -6,8 +6,9 @@ import {
 	bgResolver,
 	colorResolver,
 } from "@/contexts/themeContext";
-import { AppInput, ToggleButton } from "@/components/common";
+import { AppInput, PopupCard, ToggleButton } from "@/components/common";
 import { MiniUserPanel } from "./miniUserPanel/MiniUserPanel";
+import { NotificationBell } from "./NotificationBell/NotificationBell";
 
 type HTMLDivElementProps = HTMLAttributes<HTMLDivElement>;
 
@@ -27,17 +28,7 @@ export const Navbar = ({ className }: Props) => {
 			</div>
 			<div className="quickAccess">
 				<ToggleButton onChange={changeTheme} />
-				<div
-					className={`notification ${colorResolver(
-						"colorPrimary",
-						"colorWhite"
-					)}`}
-				>
-					<HiOutlineBell />
-					<div className={bgResolver("bgWhite", "bgLessDark")}>
-						<span className="bgRed"></span>
-					</div>
-				</div>
+				<NotificationBell />
 				<MiniUserPanel />
 			</div>
 		</div>

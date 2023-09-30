@@ -33,7 +33,7 @@ export const MiniUserPanel = () => {
 				</div>
 			</div>
 			{panelVisible && (
-				<PopupCard orientation="right">
+				<PopupCard alignment="right">
 					<div className={`userBottom`}>
 						<div className="links whitespaceNowrap">
 							{miniUserPanelLinks.map(segment => (

@@ -3,10 +3,10 @@ import "./popupCard.scss";
 
 type HTMLDivElementProps = HTMLAttributes<HTMLDivElement>;
 type Props = HTMLDivElementProps & {
-	orientation: "left" | "right" | "center";
+	alignment: "left" | "right" | "center";
 };
 
-export const PopupCard = ({ children, orientation }: Props) => {
+export const PopupCard = ({ children, alignment }: Props) => {
 	const cardRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
@@ -14,8 +14,8 @@ export const PopupCard = ({ children, orientation }: Props) => {
 		const parentHeight = cardRef.current?.parentElement?.clientHeight;
 		if (cardRef.current && parentHeight) {
 			cardRef.current.style.top = `${parentHeight / 16 + 1}rem`;
-			if (orientation !== "center") {
-				cardRef.current.style[orientation] = "0";
+			if (alignment !== "center") {
+				cardRef.current.style[alignment] = "0";
 			} else {
 				cardRef.current.style.left = "50%";
 				cardRef.current.style.transform = "translateX(-50%)";
