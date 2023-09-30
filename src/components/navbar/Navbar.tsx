@@ -1,13 +1,13 @@
 import { HTMLAttributes, useContext } from "react";
 import "./navbar.scss";
 import { HiOutlineBell } from "react-icons/hi2";
-import { PiDotsNineThin } from "react-icons/pi";
 import {
 	ThemeContext,
 	bgResolver,
 	colorResolver,
 } from "@/contexts/themeContext";
 import { AppInput, ToggleButton } from "@/components/common";
+import { MiniUserPanel } from "./miniUserPanel/MiniUserPanel";
 
 type HTMLDivElementProps = HTMLAttributes<HTMLDivElement>;
 
@@ -20,16 +20,12 @@ export const Navbar = ({ className }: Props) => {
 		toggleTheme();
 	};
 
-	const handleExpand = () => {
-		console.log("Open Panel.");
-	};
-
 	return (
 		<div className={`navbar ${className}`}>
 			<div className="search">
 				<AppInput type="text" placeholder="Search" />
 			</div>
-			<div className="userPanel">
+			<div className="quickAccess">
 				<ToggleButton onChange={changeTheme} />
 				<div
 					className={`notification ${colorResolver(
@@ -42,23 +38,7 @@ export const Navbar = ({ className }: Props) => {
 						<span className="bgRed"></span>
 					</div>
 				</div>
-				<div
-					className={`user ${bgResolver("bgLight", "bgDark")} ${colorResolver(
-						"colorDarkGray",
-						"colorGray"
-					)}`}
-				>
-					<div className="image">
-						<img src="/user.png" alt="user avatar" />
-					</div>
-					<div className="nameEmail">
-						<div>Shourov Foisal</div>
-						<div>hello@devshourov.com</div>
-					</div>
-					<div className="icon" onClick={handleExpand}>
-						<PiDotsNineThin />
-					</div>
-				</div>
+				<MiniUserPanel />
 			</div>
 		</div>
 	);

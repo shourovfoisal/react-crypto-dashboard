@@ -137,3 +137,13 @@ a {
 .borderRightDarkGray {
   border-right: 2px solid $dark-gray;
 }
+
+// Shadow
+.softShadow {
+  box-shadow: $soft-shadow;
+}
+
+// Utilities
+.whitespaceNowrap {
+  white-space: nowrap;
+}

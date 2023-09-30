@@ -1,0 +1,66 @@
+@import "../../../styles//variables";
+
+.user {
+  position: relative;
+  padding: 0.5rem 1rem;
+  border-radius: 0.8rem;
+
+  .userTop {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+    .image {
+
+      img {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+
+    .nameEmail {
+      &>div:first-child {
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      &>div:last-child {
+        margin-top: 0.3rem;
+        font-size: 0.7rem;
+        color: $light-gray;
+      }
+    }
+
+    .icon {
+      font-size: 3rem;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+  }
+
+  .userBottom {
+    user-select: none;
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.3rem;
+
+      .segment {
+
+        .link {
+          display: block;
+
+          &:not(:first-child) {
+            margin-top: 0.6rem;
+          }
+        }
+      }
+    }
+  }
+
+}
