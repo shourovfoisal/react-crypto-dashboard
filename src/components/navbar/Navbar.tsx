@@ -1,13 +1,8 @@
 import { HTMLAttributes, useContext } from "react";
 import "./navbar.scss";
-import { HiOutlineBell } from "react-icons/hi2";
-import {
-	ThemeContext,
-	bgResolver,
-	colorResolver,
-} from "@/contexts/themeContext";
-import { AppInput, PopupCard, ToggleButton } from "@/components/common";
-import { MiniUserPanel } from "./miniUserPanel/MiniUserPanel";
+import { ThemeContext } from "@/contexts/themeContext";
+import { AppInput, ToggleButton } from "@/components/common";
+import { MiniUserPanel } from "./MiniUserPanel/MiniUserPanel";
 import { NotificationBell } from "./NotificationBell/NotificationBell";
 
 type HTMLDivElementProps = HTMLAttributes<HTMLDivElement>;

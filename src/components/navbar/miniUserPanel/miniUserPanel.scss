@@ -4,6 +4,7 @@
   position: relative;
   padding: 0.5rem 1rem;
   border-radius: 0.8rem;
+  user-select: none;
 
   .userTop {
 
@@ -21,6 +22,8 @@
     }
 
     .nameEmail {
+      user-select: text;
+
       &>div:first-child {
         font-weight: 600;
         font-size: 0.9rem;
@@ -42,8 +45,6 @@
   }
 
   .userBottom {
-    user-select: none;
-
     .links {
       display: flex;
       flex-direction: column;
