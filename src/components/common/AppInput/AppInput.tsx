@@ -1,4 +1,9 @@
-import { bgResolver, colorResolver } from "@/contexts/themeContext";
+import {
+	bgResolver,
+	borderResolver,
+	colorResolver,
+	placeholderResolver,
+} from "@/contexts/themeContext";
 import "./appInput.scss";
 import { useRef } from "react";
 import type { HTMLAttributes } from "react";
@@ -26,7 +31,7 @@ const BaseInput = ({
 			className={`appInput ${wrapperClassName} ${colorResolver(
 				"colorGray",
 				"colorLightGray"
-			)} ${colorResolver("borderGray", "borderLightGray")} ${bgResolver(
+			)} ${borderResolver("borderGray", "borderLightGray")} ${bgResolver(
 				"bgWhite",
 				"bgLessDark"
 			)}`}
@@ -38,7 +43,7 @@ const BaseInput = ({
 				className={`${className} ${colorResolver(
 					"colorDarkGray",
 					"colorGray"
-				)} ${colorResolver(
+				)} ${placeholderResolver(
 					"colorPlaceholderGray",
 					"colorPlaceholderLightGray"
 				)}`}

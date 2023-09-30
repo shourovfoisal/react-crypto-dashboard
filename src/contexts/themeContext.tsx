@@ -31,16 +31,17 @@ export const ThemeProvider = ({ children }: Props) => {
 	);
 };
 
-// Detects theme and sends the right class for the component
+/**
+ * Background Resolver
+ */
+
 type lightThemeBackgrounds =
 	| "bgWhite"
 	| "bgLight"
-	| "bgHoverPrimary"
 	| "bgImmediateDescendantsWhite";
 type darkThemeBackgrounds =
 	| "bgLessDark"
 	| "bgDark"
-	| "bgHoverPrimaryDarker"
 	| "bgImmediateDescendantsLessDark";
 
 export const bgResolver = (
@@ -51,26 +52,70 @@ export const bgResolver = (
 	return theme === "light" ? lightClass : darkClass;
 };
 
-type lightThemeColors =
-	| "colorPrimary"
-	| "borderRightGray"
-	| "colorBlack"
-	| "colorGray"
-	| "colorPlaceholderGray"
-	| "colorDarkGray"
-	| "borderGray";
-type darkThemeColors =
-	| "colorWhite"
-	| "borderRightDarkGray"
-	| "colorPlaceholderLightGray"
-	| "colorGray"
-	| "colorLightGray"
-	| "borderLightGray";
+/**
+ * Background Hover Resolver
+ */
 
-export const colorResolver = (
-	lightClass: lightThemeColors,
-	darkClass: darkThemeColors
-): lightThemeColors | darkThemeColors => {
+type LightThemeBackgroundHoverColor = "bgHoverPrimary";
+type DarkThemeBackgroundHoverColor = "bgHoverPrimaryDarker";
+
+export const bgHoverResolver = (
+	lightClass: LightThemeBackgroundHoverColor,
+	darkClass: DarkThemeBackgroundHoverColor
+): LightThemeBackgroundHoverColor | DarkThemeBackgroundHoverColor => {
 	const { theme } = useContext(ThemeContext);
 	return theme === "light" ? lightClass : darkClass;
+};
+
+/**
+ * Color Resolver
+ */
+
+type LightThemeColor =
+	| "colorPrimary"
+	| "colorBlack"
+	| "colorGray"
+	| "colorDarkGray";
+type DarkThemeColor =
+	| "colorWhite"
+	| "colorGray"
+	| "colorLightGray"
+	| "colorWhiteDimmed";
+
+export const colorResolver = (
+	lightClass: LightThemeColor,
+	darkClass: DarkThemeColor
+): LightThemeColor | DarkThemeColor => {
+	const { theme } = useContext(ThemeContext);
+	return theme === "light" ? lightClass : darkClass;
+};
+
+/**
+ * Border Resolver
+ */
+
+type LightThemeBorderColor = "borderRightGray" | "borderGray";
+type DarkThemeBorderColor = "borderRightDarkGray" | "borderLightGray";
+
+export const borderResolver = (
+	lightThemeClass: LightThemeBorderColor,
+	darkThemeClass: DarkThemeBorderColor
+): LightThemeBorderColor | DarkThemeBorderColor => {
+	const { theme } = useContext(ThemeContext);
+	return theme === "light" ? lightThemeClass : darkThemeClass;
+};
+
+/**
+ * Placeholder Resolver
+ */
+
+type LightThemePlaceholderColor = "colorPlaceholderGray";
+type DarkThemePlaceholderColor = "colorPlaceholderLightGray";
+
+export const placeholderResolver = (
+	lightThemeClass: LightThemePlaceholderColor,
+	darkThemeClass: DarkThemePlaceholderColor
+): LightThemePlaceholderColor | DarkThemePlaceholderColor => {
+	const { theme } = useContext(ThemeContext);
+	return theme === "light" ? lightThemeClass : darkThemeClass;
 };

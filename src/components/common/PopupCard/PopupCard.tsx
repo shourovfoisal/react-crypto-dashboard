@@ -1,12 +1,14 @@
 import { HTMLAttributes, useEffect, useRef } from "react";
 import "./popupCard.scss";
+import { bgResolver, colorResolver } from "@/contexts/themeContext";
 
 type HTMLDivElementProps = HTMLAttributes<HTMLDivElement>;
 type Props = HTMLDivElementProps & {
 	alignment: "left" | "right" | "center";
+	padded?: boolean;
 };
 
-export const PopupCard = ({ children, alignment }: Props) => {
+export const PopupCard = ({ children, alignment, padded }: Props) => {
 	const cardRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
@@ -24,8 +26,14 @@ export const PopupCard = ({ children, alignment }: Props) => {
 	}, []);
 
 	return (
-		<div ref={cardRef} className="popupCard softShadow">
-			{children}
+		<div
+			ref={cardRef}
+			className={`popupCard softShadow ${bgResolver(
+				"bgWhite",
+				"bgDark"
+			)} ${colorResolver("colorDarkGray", "colorWhiteDimmed")}`}
+		>
+			<div style={{ ...(padded && { padding: "1.5rem" }) }}>{children}</div>
 		</div>
 	);
 };
